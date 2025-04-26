@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>juniOrDB - Simple Node.js Database</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #333;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #555;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>juniOrDB</h1>
+  <p><strong>juniOrDB</strong> is a simple and lightweight database for Node.js projects.  
+  It saves your data to a local <code>DB.json</code> file — no server needed!</p>
+
+  <h2>Installation</h2>
+  <pre>npm install juniOrDB</pre>
+
+  <h2>Usage</h2>
+  <pre>
+const JuniOrDB = require('./juniOrDB');
+const db = new JuniOrDB();
+
+// Create a table
+db.createTable('users');
+
+// Insert data
+db.insert('users', { name: 'Alice', age: 25 });
+
+// Get all data
+const users = db.getAll('users');
+console.log(users);
+
+// Update data
+db.update('users', id, { name: 'Bob' });
+
+// Delete data
+db.delete('users', id);
+  </pre>
+
+  <h2>Where does the data go?</h2>
+  <p>All your data is saved in a local file called <code>DB.json</code> automatically.</p>
+
+  <h2>Do I need a server?</h2>
+  <p>No! juniOrDB works locally without a server. It's perfect for bots, tools, or small apps.</p>
+
+  <h2>License</h2>
+  <p>MIT License</p>
+
+</body>
+</html>
